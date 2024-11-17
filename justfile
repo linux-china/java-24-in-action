@@ -6,7 +6,7 @@ plain-run:
 
 aot-generate: build
     java -XX:AOTMode=record -XX:AOTConfiguration=target/app.aotconf -cp target/java-24-in-action.jar org.mvnsearch.Main
-    java -XX:AOTMode=create -XX:AOTConfiguration=target/app.aotconf -XX:AOTCache=target/app.aot -cp target/java-24-in-action.jar
+    java -XX:AOTMode=create -XX:AOTConfiguration=target/app.aotconf -XX:AOTCache=target/app.aot -XX:+AOTClassLinking -cp target/java-24-in-action.jar
 
 aot-run:
     java -XX:AOTCache=target/app.aot -cp target/java-24-in-action.jar org.mvnsearch.Main
